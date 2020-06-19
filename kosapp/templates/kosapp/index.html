@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container">   
+    <div class="mt-4 jumbotron hoverable text-center">
+    <p class="mb-4 h3">Новые клиенты</p>  
+      <div class="owl-carousel">
+        {% for client in clients %}
+          {% if client.email_count == 0 %}
+            <!-- Card group -->
+            <div class="card-group">
+              <!-- Card -->
+              <div class="card">
+                <!-- Card content -->
+                <div class="card-body">
+                  <!-- Title -->
+                  <h5 class="card-title">{{ client.claimant }}</h5>
+                  <!-- Text -->
+                  <h6 class="card-title">{{ client.defendant }}</h6>
+                  <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->     
+                </div>
+                <div class="view overlay">
+                  <a href="{% url 'detail_client_url' client.id  %}" class="btn btn-primary">Подробнее</a>
+                </div>
+                <!-- Card content -->
+              </div>
+              <!-- Card -->
+            </div>
+            <!-- Card group -->
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>    
+    <div class="jumbotron hoverable text-center">
+      <p class="mb-4 h3">Клиенты с непрочитанной почтой</p> 
+        <div class="owl-carousel">
+          {% for client in clients %}
+            {% if client.email_count != 0 %}
+              <!-- Card group -->
+              <div class="card-group">
+                <!-- Card -->
+                <div class="card">
+                  <!-- Card content -->
+                  <div class="card-body">
+                    <!-- Title -->
+                    <h5 class="card-title">{{ client.claimant }}</h5>
+                    <!-- Text -->
+                    <h6 class="card-title">{{ client.defendant }}</h6>
+                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->     
+                  </div>
+                  <div class="view overlay">
+                    <a href="{% url 'detail_client_url' client.id  %}" class="btn btn-primary">Подробнее</a>
+                  </div>
+                  <!-- Card content -->
+                </div>
+                <!-- Card -->
+              </div>
+              <!-- Card group -->
+            {% endif %}
+          {% endfor %}
+        </div>
+    </div>  
+  </div>
+</div>   
+{% endblock %}
+
