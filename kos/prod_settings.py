@@ -7,14 +7,14 @@ SECRET_KEY = '$az47@bhkukfu(qn!3cvasdbc-&edrywns7=9sm5b8jhx9ofy-r#'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['20.188.56.170', '127.0.0.1']
+ALLOWED_HOSTS = ['40.127.188.105', '127.0.0.1']
 
 
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-		'NAME': 'promptapp',
-		'USER': 'postgres',
+		'NAME': 'post_db',
+		'USER': 'assistant',
 		'PASSWORD': '929227007Asdec',
 		'HOST': 'localhost',
 		'PORT': '5432',
