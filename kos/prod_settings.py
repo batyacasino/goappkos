@@ -7,7 +7,7 @@ SECRET_KEY = '$az47@bhkukfu(qn!3cvasdbc-&edrywns7=9sm5b8jhx9ofy-r#'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['40.127.188.105', '127.0.0.1']
+ALLOWED_HOSTS = ['40.115.123.214', '127.0.0.1']
 
 
 DATABASES = {
